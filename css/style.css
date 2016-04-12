@@ -14,22 +14,22 @@
 }
 
 
-#plugins-status {
+.plugins-status {
   margin-left: auto;
   margin-right: auto;
 }
 
-table#plugins-status tr td ul {
+.plugins-status tr td ul {
   list-style: none;
 }
 
 
-table#plugins-status tr td {
+.plugins-status tr td {
   text-align: left;
   padding: 5;
 }
 
-table#plugins-status tr td a img {
+.plugins-status tr td a img {
   float: right;
   margin-left: 10px;
   margin-right: 10px;
