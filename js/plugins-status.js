@@ -80,9 +80,15 @@ function add_table_cell(class_id, plugin_name, status, order) {
 }
 
 $(document).ready(function() {
-    var default_plugins_list_url = "https://raw.githubusercontent.com/purbon/logstash/feature/make_list_as_json/rakelib/default_plugins.json"
-    $.get(default_plugins_list_url, function(list) {
-      load_plugins_list(undefined, JSON.parse(list).default_plugins);
+    var plugins_metadata_url = "https://raw.githubusercontent.com/purbon/logstash/feature/make_list_as_json/rakelib/plugins-metadata.json"
+    $.get(plugins_metadata_url, function(metadata) {
+      var list = [];
+      $.each(JSON.parse(metadata), function(key, value) {
+        if (value["default-plugins"]) {
+          list.push(key);
+        }
+      });
+      load_plugins_list(undefined, list);
     });
 });
 
